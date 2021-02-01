@@ -1,0 +1,200 @@
+
+/*Reset Css*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*Estilo general*/
+body {
+  line-height: 1.5;
+}
+
+h2 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  margin: 0 0 16px;
+}
+/*Estilo bloque*/
+.blocks {
+  min-height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  color: white;
+}
+.blocks__block {
+  position: absolute;
+  width: 20%;
+  min-height: 100vh;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.blocks__block:nth-child(1) {
+  left: 0;
+}
+.blocks__block:nth-child(2) {
+  left: 20%;
+}
+.blocks__block:nth-child(3) {
+  left: 40%;
+}
+.blocks__block:nth-child(4) {
+  left: 60%;
+}
+.blocks__block:nth-child(5) {
+  left: 80%;
+}
+.blocks__block:nth-child(1) .block__content {
+  background: #244F75;
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+  -webkit-animation-name: strip1;
+          animation-name: strip1;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+.blocks__block:nth-child(2) .block__content {
+  background: #60BFBF;
+  -webkit-transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
+  -webkit-animation-name: strip2;
+          animation-name: strip2;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.blocks__block:nth-child(3) .block__content {
+  background: #8C4B7E;
+  -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+  -webkit-animation-name: strip3;
+          animation-name: strip3;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.blocks__block:nth-child(4) .block__content {
+  background: #F8BB44;
+  -webkit-transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
+  -webkit-animation-name: strip4;
+          animation-name: strip4;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+.blocks__block:nth-child(5) .block__content {
+  background: #F24B4B;
+  -webkit-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
+  -webkit-animation-name: strip5;
+          animation-name: strip5;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+.blocks .block__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+          animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+
+}
+.blocks .block__content:hover:before {
+  -webkit-transform: skew(0deg) scale(3) translate(0, 0);
+          transform: skew(0deg) scale(3) translate(0, 0);
+  opacity: 0.1;
+}
+.blocks .block__content:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0.05;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: skew(30deg) scaleY(1) translate(0, 0);
+          transform: skew(30deg) scaleY(1) translate(0, 0);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+/*Transform movimiento*/
+@keyframes strip1 {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes strip2 {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes strip3 {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes strip4 {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes strip5 {
+  0% {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+/*Responsible*/
+@media screen and (max-width: 760px) {
+  .blocks__block {
+    min-height: 100vh;
+  }
+}
+
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28 ene. 2021, 16:16:56
+    Author     : Eva
+*/
+
